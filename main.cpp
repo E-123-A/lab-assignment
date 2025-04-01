@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <numeric>
+#include "Person.h"
 
 class Student {
 public:
@@ -22,12 +23,9 @@ public:
     }
 };
 
+
 int main() {
-    Student student{"John", "Smith", {3.0, 4.5, 5.0, 3.5}};
-
-    student.print();
-
-    std::cout << "Average grade: " << student.calculate_grade() << std::endl;
-
+    Person person("Alice", 25);
+    person.print_info();
     return 0;
 }
