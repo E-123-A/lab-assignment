@@ -1,31 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <numeric>
-#include "Person.h"
-
-class Student {
-public:
-    std::string name;
-    std::string surname;
-    std::vector<float> grades;
-
-    float calculate_grade() {
-        float sum = std::accumulate(grades.begin(), grades.end(), 0.0f);
-        return sum / grades.size();
-    }
-
-    void print() {
-        std::cout << name << " " << surname << ": ";
-        for (const auto& grade : grades) {
-            std::cout << grade << " ";
-        }
-        std::cout << std::endl;
-    }
-};
-
+#include "student.h"
 
 int main() {
-    Person person("Alice", 25);
-    person.print_info();
+    Student student("Jan", "Kowalski", "s12345");
+    student.add_grade(3.0);
+    student.add_grade(4.5);
+    student.add_grade(5.0);
+    student.add_grade(3.5);
+
+    student.print();
+    std::cout << "Average grade: " << student.average_grade() << std::endl;
+
     return 0;
 }

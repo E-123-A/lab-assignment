@@ -1,16 +1,22 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include <iostream>
+#include <vector>
 #include <string>
 
 class Person {
-protected:
+private:
     std::string name;
-    int age;
+    std::string surname;
+    std::vector<double> grades;
 
 public:
-    Person(const std::string& name, int age);
-    virtual void print_info() const;
+    Person(const std::string& name, const std::string& surname);
+
+    void add_grade(double grade);
+    void print() const;
+    double average_grade() const;
 };
 
-#endif // PERSON_H
+#endif

@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-        person.cpp
+        person.cpp \
+        student.cpp
 
 HEADERS += \
-    person.h
+    person.h \
+    student.h
